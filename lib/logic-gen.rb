@@ -1,0 +1,3 @@
+class LogicGen
+
+end
