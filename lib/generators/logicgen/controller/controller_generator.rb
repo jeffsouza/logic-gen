@@ -5,9 +5,8 @@ module Logicgen
 
       def begin
         raise NameError.new("Nome do controller é obrigatório") if options.name.blank?
-        @name = options.name
-        @controller_name = options.name
-        @controller_class = "#{@controller_name.capitalize}Controller"
+        @controller_name = options.name.pluralize
+        @controller_class = "#{@controller_name}_controller".split("_").map(&:capitalize).join
         @logic_class ="#{@controller_class}Logic"
         @logic_class_file = "#{@controller_name}_controller_logic.rb"
       end
