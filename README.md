@@ -32,3 +32,12 @@ $ rails g logicgen:model --name posts
 It will:
 - Create a file in <tt>app/logic/models</tt> named <tt>post_logic.rb</tt>
 - Include the module inside model <tt>Post</tt>
+
+#### For Mailers
+
+```ruby
+$ rails g logicgen:mailer --name my_mailer
+```
+It will:
+- Create a file in <tt>app/logic/mailers</tt> named <tt>my_mailer_logic.rb</tt>
+- Include the module inside mailer <tt>MyMailer</tt>

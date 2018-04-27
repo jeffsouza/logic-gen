@@ -11,7 +11,7 @@ module Logicgen
         @logic_class_file = "#{@model_name}_logic.rb"
       end
 
-      def inject_to_controller
+      def inject_to_model
         begin
           inject_into_class "app/models/#{@model_name}.rb", @model_class, "  include #{@logic_class}\n"
         rescue NameError
@@ -19,7 +19,7 @@ module Logicgen
         end
       end
 
-      def create_controller_logic_file
+      def create_model_logic_file
         create_file "app/logic/models/#{@logic_class_file}", "module #{@logic_class}\nend"
       end
 
